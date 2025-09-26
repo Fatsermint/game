@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://c353csv2sro00"]
+
+[ext_resource type="Script" uid="uid://b11eh4mjn4hs6" path="res://reactio_time.gd" id="1_2k18w"]
+[ext_resource type="FontFile" uid="uid://bm74bnfe2ya21" path="res://PixelOperator8.ttf" id="2_hgi55"]
+
+[node name="ReactioTime" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2k18w")
+
+[node name="BackButton" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.2800003, 1.2800003)
+
+[node name="BackButton" type="Button" parent="BackButton"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hgi55")
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.800001, 16.160004)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+layout_mode = 2
+color = Color(0.8979862, 0.0002379825, 0.017161885, 1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.719997, 16.160004)
+
+[node name="Button" type="Button" parent="MarginContainer3"]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_button_pressed"]

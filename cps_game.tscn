@@ -1,0 +1,263 @@
+[gd_scene load_steps=4 format=3 uid="uid://2woers08vpn2"]
+
+[ext_resource type="FontFile" uid="uid://d075w74wmper0" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_4gf6h"]
+[ext_resource type="Script" uid="uid://bic3vbg61a2gn" path="res://cps_game.gd" id="1_e33mb"]
+[ext_resource type="FontFile" uid="uid://bm74bnfe2ya21" path="res://PixelOperator8.ttf" id="3_6ev7y"]
+
+[node name="Cps Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_e33mb")
+
+[node name="Otsikko" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 81.00001
+offset_top = 5.9999995
+offset_right = 320.0
+offset_bottom = 46.0
+scale = Vector2(4.332186, 2.5836525)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Otsikko"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_4gf6h")
+theme_override_font_sizes/font_size = 18
+text = "You have 5 seconds to click
+ as muchas you can"
+
+[node name="Thing" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -39.0
+offset_right = -226.99997
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.9214947, 2.9328158)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Thing"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_4gf6h")
+theme_override_font_sizes/font_size = 18
+text = "Click Here to start"
+
+[node name="SmallTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Cps" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 109.0
+offset_right = 239.0
+offset_bottom = 149.0
+scale = Vector2(4.8152533, 2.5836525)
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="Cps"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.46229059, 0.46229059, 0.46229059, 1)
+theme_override_fonts/font = ExtResource("1_4gf6h")
+theme_override_font_sizes/font_size = 18
+
+[node name="WindoW" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(250, 45)
+layout_mode = 0
+offset_left = 263.0
+offset_top = 128.0
+offset_right = 513.0
+offset_bottom = 173.0
+scale = Vector2(2.4186842, 8.549233)
+
+[node name="Window" type="ColorRect" parent="WindoW"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+
+[node name="ClicksLabel" type="MarginContainer" parent="WindoW/Window"]
+layout_mode = 0
+offset_left = 28.657864
+offset_top = 2.8467684
+offset_right = 268.65787
+offset_bottom = 42.846767
+scale = Vector2(0.71236247, 0.21313208)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="WindoW/Window/ClicksLabel"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "You Clicked x Times"
+vertical_alignment = 1
+
+[node name="CpsLabel" type="MarginContainer" parent="WindoW/Window"]
+layout_mode = 0
+offset_left = 28.696377
+offset_top = 9.07888
+offset_right = 268.69638
+offset_bottom = 49.07888
+scale = Vector2(0.72497606, 0.22581735)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="WindoW/Window/CpsLabel"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "You Clicked x Times"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="WindoW/Window"]
+layout_mode = 0
+offset_left = 225.85127
+offset_top = 0.23081902
+offset_right = 345.85126
+offset_bottom = 136.23082
+scale = Vector2(0.19819838, 0.033714764)
+
+[node name="Button" type="Button" parent="WindoW/Window/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+theme_override_font_sizes/font_size = 128
+text = "X"
+
+[node name="VerySmallTimer" type="Timer" parent="WindoW/Window/MarginContainer"]
+wait_time = 0.05
+
+[node name="BackButton" type="MarginContainer" parent="."]
+z_index = 2
+z_as_relative = false
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+scale = Vector2(1.2800003, 1.2800003)
+
+[node name="BackButton" type="Button" parent="BackButton"]
+z_index = 2
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_6ev7y")
+action_mode = 0
+text = "Back"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+z_index = 1
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 111.00001
+offset_top = 99.0
+offset_right = 111.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8097324, 0.73370343)
+
+[node name="Button" type="Button" parent="MarginContainer2"]
+custom_minimum_size = Vector2(50, 41)
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_4gf6h")
+theme_override_font_sizes/font_size = 18
+
+[node name="Timer" type="Timer" parent="MarginContainer2"]
+wait_time = 5.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.0
+offset_top = -224.99997
+offset_right = -425.0
+offset_bottom = -184.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(23.279999, 11.960002)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="5" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 15.936426
+offset_top = 10.367889
+offset_right = 55.936424
+offset_bottom = 50.36789
+scale = Vector2(0.18415801, 0.5086429)
+
+[node name="5Button" type="Button" parent="MarginContainer/ColorRect/5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "5s"
+
+[node name="1" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 3.3075604
+offset_top = 10.367889
+offset_right = 43.30756
+offset_bottom = 50.36789
+scale = Vector2(0.18415801, 0.5086429)
+
+[node name="1Button" type="Button" parent="MarginContainer/ColorRect/1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "1s"
+
+[node name="10" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 27.878004
+offset_top = 10.284277
+offset_right = 77.878006
+offset_bottom = 50.28428
+scale = Vector2(0.18415801, 0.5086429)
+
+[node name="10Button" type="Button" parent="MarginContainer/ColorRect/10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "10s"
+
+[node name="Otsikko" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.16629231, 0.24123174)
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/Otsikko"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_6ev7y")
+text = "UNTO"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="SmallTimer" to="." method="_on_small_timer_timeout"]
+[connection signal="pressed" from="WindoW/Window/MarginContainer/Button" to="." method="_on_buttona_pressed"]
+[connection signal="timeout" from="WindoW/Window/MarginContainer/VerySmallTimer" to="." method="_on_very_small_timer_timeout"]
+[connection signal="pressed" from="BackButton/BackButton" to="." method="perkele"]
+[connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="MarginContainer2/Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="MarginContainer/ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/ColorRect/5/5Button" to="." method="_on_5button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/5/5Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/1/1Button" to="." method="_on_1button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/10/10Button" to="." method="_on_10button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/10/10Button" to="." method="_on_button_pressed"]
