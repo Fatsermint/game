@@ -81,19 +81,13 @@ func _on_small_timer_timeout() -> void:
 		headlabel.text = str(snapped(tulos,0.1))
 		print(tulos)
 	
-	
-
-
-	
-	
-
-
 func _on_very_small_timer_timeout() -> void:
 	menuOpenn = false
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	get_tree().reload_current_scene()
 
-
+func do_nothing():
+	pass
 func _on_5button_pressed() -> void:
 	time = 5
 	timer.wait_time = 5

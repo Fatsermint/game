@@ -4,7 +4,7 @@ extends Control
 var posy = randf_range(0,576)
 var posx = randf_range(0,1075)
 var points = 0
-var time = 10
+var time = 0
 var gamegoing = false
 var hit = false
 @onready var margin_container: MarginContainer = $MarginContainer
@@ -16,6 +16,7 @@ var hit = false
 @onready var verysmalltimer: Timer = $MarginContainer/VerySmallTimer
 @onready var timelabel: Label = $MarginContainer4/TimeLabel
 @onready var bigtimer: Timer = $BigTimer
+
 #window
 
 @onready var resultlabel: Label = $Window/ClicksLabel/Label
@@ -26,6 +27,7 @@ func _on_back_button_pressed() -> void:
 
 
 
+	
 func _on_color_rect_mouse_entered() -> void:
 	if gamegoing == false and window.visible == false:
 		gamegoing = true
@@ -51,9 +53,8 @@ func _on_very_small_timer_timeout() -> void:
 
 func _on_big_timer_timeout() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	resultlabel.text ="You Got "+ str(points) + " Points\n In 5 Seconds"
+	resultlabel.text ="You Got "+ str(points) + "Points\n In" +"Seconds"
 	window.visible = true
-
 
 func _on_button_pressed() -> void:
 	window.visible = false

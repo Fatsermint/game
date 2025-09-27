@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ovtd5sfqwrvp"]
+[gd_scene load_steps=4 format=3 uid="uid://ovtd5sfqwrvp"]
 
 [ext_resource type="Script" uid="uid://c7ofm05quexqd" path="res://random_game.gd" id="1_d1yg4"]
 [ext_resource type="FontFile" uid="uid://bm74bnfe2ya21" path="res://PixelOperator8.ttf" id="1_dqiys"]
+[ext_resource type="Script" uid="uid://cymlv0lm8240o" path="res://startseconds.gd" id="3_c4anj"]
 
 [node name="RandomGame" type="Control"]
 layout_mode = 3
@@ -45,6 +46,7 @@ wait_time = 0.1
 
 [node name="BigTimer" type="Timer" parent="."]
 wait_time = 10.0
+one_shot = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -112,11 +114,55 @@ text = "X"
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 168.0
+offset_top = 74.00001
+offset_right = 208.0
+offset_bottom = 114.00001
+scale = Vector2(20.72, 12.52)
+script = ExtResource("3_c4anj")
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer3"]
 layout_mode = 2
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="5" type="MarginContainer" parent="MarginContainer3/ColorRect"]
+layout_mode = 0
+offset_left = 2.4131274
+offset_top = 8.546325
+offset_right = 42.413128
+offset_bottom = 48.546326
+scale = Vector2(0.25096518, 0.49984792)
+
+[node name="5s" type="Button" parent="MarginContainer3/ColorRect/5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dqiys")
+text = "5s"
+
+[node name="10" type="MarginContainer" parent="MarginContainer3/ColorRect"]
+layout_mode = 0
+offset_left = 15.444017
+offset_top = 8.865813
+offset_right = 55.444016
+offset_bottom = 48.865814
+scale = Vector2(0.2034819, 0.49984792)
+
+[node name="10s" type="Button" parent="MarginContainer3/ColorRect/10"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dqiys")
+text = "10s"
+
+[node name="30s" type="MarginContainer" parent="MarginContainer3/ColorRect"]
+layout_mode = 0
+offset_left = 28.281857
+offset_top = 8.546325
+offset_right = 68.28186
+offset_bottom = 48.546326
+scale = Vector2(0.19884162, 0.49984792)
+
+[node name="30s" type="Button" parent="MarginContainer3/ColorRect/30s"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dqiys")
+text = "30s"
 
 [connection signal="pressed" from="BackButton/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/ColorRect" to="." method="_on_color_rect_mouse_entered"]
@@ -125,3 +171,8 @@ layout_mode = 2
 [connection signal="timeout" from="MarginContainer/VerySmallTimer" to="." method="_on_very_small_timer_timeout"]
 [connection signal="timeout" from="BigTimer" to="." method="_on_big_timer_timeout"]
 [connection signal="pressed" from="Window/MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/ColorRect/5/5s" to="." method="_on_s_pressed"]
+[connection signal="pressed" from="MarginContainer3/ColorRect/5/5s" to="MarginContainer3" method="_on_s_pressed"]
+[connection signal="pressed" from="MarginContainer3/ColorRect/5/5s" to="MarginContainer3" method="_on_5s_pressed"]
+[connection signal="pressed" from="MarginContainer3/ColorRect/10/10s" to="MarginContainer3" method="_on_10s_pressed"]
+[connection signal="pressed" from="MarginContainer3/ColorRect/30s/30s" to="MarginContainer3" method="_on_30s_pressed"]
