@@ -27,19 +27,27 @@ text = "Back"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="MarginContainer"]
-layout_mode = 2
+scale = Vector2(28.8, 16.24)
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(28.800001, 16.160004)
+scale = Vector2(28.660055, 16.271086)
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
 layout_mode = 2
 color = Color(0.8979862, 0.0002379825, 0.017161885, 1)
+
+[node name="Label" type="Label" parent="MarginContainer2/ColorRect"]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 28.0
+scale = Vector2(0.5687378, 1)
+theme_override_fonts/font = ExtResource("2_hgi55")
+theme_override_font_sizes/font_size = 16
+text = "Click!"
 
 [node name="Timer" type="Timer" parent="."]
 

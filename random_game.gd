@@ -7,6 +7,7 @@ var points = 0
 var time = 0
 var gamegoing = false
 var hit = false
+var starttime = 0
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var label: Label = $MarginContainer2/Label
 @onready var smalltimer: Timer = $MarginContainer/SmallTimer
@@ -31,7 +32,10 @@ func _on_back_button_pressed() -> void:
 func _on_color_rect_mouse_entered() -> void:
 	if gamegoing == false and window.visible == false:
 		gamegoing = true
+		starttime = bigtimer.wait_time
+		print(starttime)
 		bigtimer.start()
+		
 		hit = true
 	if gamegoing == true and window.visible ==false:
 		margin_container.visible = false
@@ -53,7 +57,7 @@ func _on_very_small_timer_timeout() -> void:
 
 func _on_big_timer_timeout() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	resultlabel.text ="You Got "+ str(points) + "Points\n In" +"Seconds"
+	resultlabel.text ="You Got "+ str(points) + " Points\n In " + str(snapped(starttime, 1))+" Seconds"
 	window.visible = true
 
 func _on_button_pressed() -> void:
